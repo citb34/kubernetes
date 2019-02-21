@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mariadb-rs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb-rs
+  template:
+    metadata:
+      labels:
+        app: mariadb-rs
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb
+        ports:
+        - containerPort: 3306
