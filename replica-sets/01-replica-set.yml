@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
  kind: ReplicaSet
  metadata:
@@ -17,3 +18,18 @@ apiVersion: apps/v1
          image: nginx
          ports:
          - containerPort: 80
+...
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-rs-svc
+spec:
+  selector:
+    app: nginx-rs
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+...
