@@ -6,15 +6,14 @@ apiVersion: apps/v1
    replicas: 1
    selector:
      matchLabels:
-       app: soaktestrs
+       app: nginx-rs
    template:
      metadata:
        labels:
-         app: soaktestrs
-         environment: dev
+         app: nginx-rs
      spec:
        containers:
-       - name: soaktestrs
-         image: nickchase/soaktest
+       - name: nginx
+         image: nginx
          ports:
          - containerPort: 80
