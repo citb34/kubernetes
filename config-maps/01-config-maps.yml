@@ -4,8 +4,8 @@ kind: ConfigMap
 metadata:
   name: myconfig
 data:
-  username: cm9vdA==
-  password: YWJjZEAxMjM0IQ==
+  username: root
+  password: abcd@123!
 ...
 
 ---
