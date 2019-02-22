@@ -1,0 +1,45 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: cm9vdA==
+  password: YWJjZEAxMjM0IQ==
+...
+
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: secret-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: secret
+  template:
+    metadata:
+      labels:
+        app: secret
+    spec:
+      containers:
+      - name: centos
+        image: centos
+        command: ["sleep", "10000"]
+        env:
+          - name: SECRET_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: username
+        volumeMounts:
+        - name: mycred
+          mountPath: "/opt/foo"
+          readOnly: true
+      volumes:
+      - name: mycred
+        secret:
+          secretName: mysecret
+...
