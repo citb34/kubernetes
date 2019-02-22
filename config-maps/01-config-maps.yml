@@ -30,15 +30,7 @@ spec:
         env:
           - name: SECRET_USERNAME
             valueFrom:
-              secretKeyRef:
+              configMapKeyRef:
                 name: mysecret
                 key: username
-        volumeMounts:
-        - name: mycred
-          mountPath: "/opt/foo"
-          readOnly: true
-      volumes:
-      - name: mycred
-        secret:
-          secretName: mysecret
 ...
