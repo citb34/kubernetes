@@ -28,7 +28,7 @@ spec:
         image: centos
         command: ["sleep", "10000"]
         env:
-          - name: SECRET_USERNAME
+          - name: CONFIG_USERNAME
             valueFrom:
               configMapKeyRef:
                 name: myconfig
