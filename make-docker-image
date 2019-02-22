@@ -1,3 +1,4 @@
 #!/bin/bash
 
-IMAGE=$()
+IMAGE=$(head -1 Dockerfile | sed -e 's/^#//')
+docker build -t 
