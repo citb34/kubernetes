@@ -1,4 +1,4 @@
 #!/bin/bash
 
 IMAGE=$(head -1 Dockerfile | sed -e 's/^#//')
-docker build -t 
+docker build -t $IMAGE . && docker push $IMAGE
