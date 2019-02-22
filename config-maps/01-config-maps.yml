@@ -31,6 +31,6 @@ spec:
           - name: SECRET_USERNAME
             valueFrom:
               configMapKeyRef:
-                name: mysecret
+                name: myconfig
                 key: username
 ...
