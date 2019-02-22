@@ -1,1 +1,2 @@
-#rkube01/healt
+#rkube01/healthz:v1
+FROM centos
