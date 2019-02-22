@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: rkube01/
+        image: rkube01/healthz:v1
         ports:
         - containerPort: 80
 ...
