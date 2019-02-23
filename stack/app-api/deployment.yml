@@ -30,7 +30,10 @@ spec:
                 name: db-cred
                 key: appPassword
           - name: RDS_ENDPOINT
-            
+            valueFrom:
+              secretKeyRef:
+                name: db-cred
+                key: appPassword
       volumes:
         - name: mariadb-data-vol
           persistentVolumeClaim:
