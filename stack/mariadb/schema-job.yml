@@ -9,6 +9,10 @@ spec:
       - name: schema-loader
         image: rkube01/schema-loader:v1
         env:
-          
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: root-db-cred
+                key: rootPassword
       restartPolicy: Never
   backoffLimit: 4
