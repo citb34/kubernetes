@@ -31,7 +31,7 @@ spec:
                 key: appPassword
           - name: RDS_ENDPOINT
             valueFrom:
-              secretKeyRef:
+              configMapKeyRef:
                 name: db-cred
                 key: appPassword
       volumes:
