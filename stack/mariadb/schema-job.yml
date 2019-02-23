@@ -8,5 +8,7 @@ spec:
       containers:
       - name: schema-loader
         image: rkube01/schema-loader:v1
+        env:
+          
       restartPolicy: Never
   backoffLimit: 4
