@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-svc
+  namespace: api
+spec:
+  selector:
+    app: app-api
+  ports:
+  - protocol: TCP
+    port: 8090
+    targetPort: 8090
