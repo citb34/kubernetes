@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: db-details
 data:
-  dbEndpoint: 
+  dbEndpoint: mariadb-svc.db.svc.cluster.local
