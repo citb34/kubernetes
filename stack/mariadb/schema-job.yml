@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pi
+  name: schema-loader
 spec:
   template:
     spec:
       containers:
-      - name: pi
+      - name: schema-loader
         image: perl
         command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
       restartPolicy: Never
