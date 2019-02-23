@@ -32,7 +32,7 @@ spec:
           - name: RDS_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                name: db-cred
+                name: db-details
                 key: appPassword
       volumes:
         - name: mariadb-data-vol
