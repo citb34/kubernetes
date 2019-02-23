@@ -17,9 +17,9 @@ spec:
       - name: api
         image: rkube01/app-api:v1
         ports:
-        - containerPort: 3306
+        - containerPort: 8090
         env:
-          - name: MYSQL_ROOT_PASSWORD
+          - name: RDS_USER
             valueFrom:
               secretKeyRef:
                 name: root-db-cred
