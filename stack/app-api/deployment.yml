@@ -23,7 +23,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: db-cred
-                key: rootPassword
+                key: appUsername
+          - name: RDS_USER
+            valueFrom:
+              secretKeyRef:
+                name: db-cred
+                key: appUsername
       volumes:
         - name: mariadb-data-vol
           persistentVolumeClaim:
