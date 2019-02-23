@@ -6,3 +6,4 @@ while true ; do
     sleep 5
 done
 
+mysql -h mariadb-svc.db.svc.cluster.local -u root -p${}
