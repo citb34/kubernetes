@@ -8,3 +8,4 @@ done
 
 curl -s https://raw.githubusercontent.com/citb34/project-1-documentation/master/studentapp.sql >/tmp/studentapp.sql 
 mysql -h mariadb-svc.db.svc.cluster.local -u root -p${MYSQL_ROOT_PASSWORD} </tmp/studentapp.sql
+exit $?
