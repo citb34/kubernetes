@@ -17,8 +17,8 @@ spec:
       - name: mariadb
         image: mariadb
         volumeMounts:
-      - mountPath: "/var/www/html"
-        name: mypd
+        - mountPath: "/var/lib"
+          name: mypd
 
         ports:
         - containerPort: 3306
