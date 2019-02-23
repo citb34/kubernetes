@@ -28,6 +28,6 @@ spec:
                 name: root-db-cred
                 key: rootPassword
       volumes:
-        - name: mypd
+        - name: mariadb-data-vol 
           persistentVolumeClaim:
             claimName: mariadb-data-vol
