@@ -33,8 +33,4 @@ spec:
             valueFrom:
               configMapKeyRef:
                 name: db-details
-                key: appPassword
-      volumes:
-        - name: mariadb-data-vol
-          persistentVolumeClaim:
-            claimName: mariadb-data-vol
+                key: dbEndpoint
