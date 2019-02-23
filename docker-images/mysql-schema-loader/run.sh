@@ -6,5 +6,5 @@ while true ; do
     sleep 5
 done
 
-
+curl https://raw.githubusercontent.com/citb34/project-1-documentation/master/studentapp.sql >
 mysql -h mariadb-svc.db.svc.cluster.local -u root -p${MYSQL_ROOT_PASSWORD} </tmp/studentapp.sql 
