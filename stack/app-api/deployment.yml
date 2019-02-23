@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mariadb-rs
+  namespace: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb-rs
+  template:
+    metadata:
+      labels:
+        app: mariadb-rs
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: mariadb-data-vol 
+        ports:
+        - containerPort: 3306
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: root-db-cred
+                key: rootPassword
+      volumes:
+        - name: mariadb-data-vol
+          persistentVolumeClaim:
+            claimName: mariadb-data-vol
