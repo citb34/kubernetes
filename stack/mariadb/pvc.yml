@@ -2,6 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: mariadb-data-vol
+  namespace: db
 spec:
   accessModes:
     - ReadWriteOnce
