@@ -19,8 +19,6 @@ spec:
         volumeMounts:
         - mountPath: "/var/lib/mysql"
           name: mariadb-data-vol 
-      
-
         ports:
         - containerPort: 3306
         env:
@@ -28,4 +26,4 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: root-db-cred
-                key: rootPassword
+                key: rootPasswor
