@@ -22,7 +22,7 @@ spec:
           - name: RDS_USER
             valueFrom:
               secretKeyRef:
-                name: root-db-cred
+                name: db-cred
                 key: rootPassword
       volumes:
         - name: mariadb-data-vol
