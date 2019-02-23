@@ -7,14 +7,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mariadb-rs
+      app: app-api
   template:
     metadata:
       labels:
-        app: mariadb-rs
+        app: app-api
     spec:
       containers:
-      - name: mariadb
+      - name: api
         image: mariadb
         volumeMounts:
         - mountPath: "/var/lib/mysql"
