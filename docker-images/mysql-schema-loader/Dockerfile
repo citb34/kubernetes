@@ -1,1 +1,1 @@
-#rkube01/healthz:v1
+#rkube01/schema-loader:v1
