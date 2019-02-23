@@ -28,4 +28,6 @@ spec:
                 name: root-db-cred
                 key: rootPassword
       volumes:
-        
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: myclaim
