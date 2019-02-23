@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: mariadb
+        image: 
         volumeMounts:
         - mountPath: "/var/lib/mysql"
           name: mariadb-data-vol 
