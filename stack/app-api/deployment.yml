@@ -34,3 +34,8 @@ spec:
               configMapKeyRef:
                 name: db-details
                 key: dbEndpoint
+        readinessProbe:
+          tcpSocket:
+            port: 8090
+          initialDelaySeconds: 30
+          periodSeconds: 10
