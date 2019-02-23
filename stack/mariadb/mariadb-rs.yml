@@ -26,4 +26,6 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: root-db-cred
-                key: rootPasswor
+                key: rootPassword
+      volumes:
+        
