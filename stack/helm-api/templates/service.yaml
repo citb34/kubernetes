@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ include "sample.fullname" . }}
+  name: {{ include "helm-api.fullname" . }}
   namespace: api
 spec:
   type: LoadBalancer

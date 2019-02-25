@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "sample.fullname" . }}
+  name: {{ include "helm-api.fullname" . }}
   namespace: api
 spec:
   replicas: 1
@@ -24,17 +24,17 @@ spec:
           - name: RDS_USER
             valueFrom:
               secretKeyRef:
-                name: {{ include "sample.fullname" . }}
+                name: {{ include "helm-api.fullname" . }}
                 key: appUsername
           - name: RDS_PASS
             valueFrom:
               secretKeyRef:
-                name: {{ include "sample.fullname" . }}
+                name: {{ include "helm-api.fullname" . }}
                 key: appPassword
           - name: RDS_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                name: {{ include "sample.fullname" . }}
+                name: {{ include "helm-api.fullname" . }}
                 key: dbEndpoint
         readinessProbe:
           tcpSocket:
