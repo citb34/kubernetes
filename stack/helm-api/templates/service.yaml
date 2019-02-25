@@ -1,19 +1,13 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  name: {{ include "helm-api.fullname" . }}
-  labels:
-    app.kubernetes.io/name: {{ include "helm-api.name" . }}
-    helm.sh/chart: {{ include "helm-api.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  name: api-svc
+  namespace: api
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+  type: LoadBalancer
   selector:
-    app.kubernetes.io/name: {{ include "helm-api.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    app: app-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8090
