@@ -4,6 +4,7 @@ metadata:
   name: api-svc
   namespace: api
 spec:
+  type: LoadBalancer
   selector:
     app: app-api
   ports:
