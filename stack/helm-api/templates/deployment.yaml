@@ -17,7 +17,7 @@ spec:
         - name: regcred
       containers:
       - name: api
-        image: rkube01/app-api:{{ .Values.imageTag }}
+        image: rkube01/app-api:{{ .Values.image.tag }}
         ports:
         - containerPort: 8090
         env:
