@@ -24,17 +24,17 @@ spec:
           - name: RDS_USER
             valueFrom:
               secretKeyRef:
-                name: db-cred
+                name: {{ include "sample.fullname" . }}
                 key: appUsername
           - name: RDS_PASS
             valueFrom:
               secretKeyRef:
-                name: db-cred
+                name: {{ include "sample.fullname" . }}
                 key: appPassword
           - name: RDS_ENDPOINT
             valueFrom:
               configMapKeyRef:
-                name: db-details
+                name: {{ include "sample.fullname" . }}
                 key: dbEndpoint
         readinessProbe:
           tcpSocket:
