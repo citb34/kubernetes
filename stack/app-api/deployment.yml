@@ -13,6 +13,9 @@ spec:
       labels:
         app: app-api
     spec:
+      imagePullSecrets:
+  - name: regcred
+
       containers:
       - name: api
         image: rkube01/app-api:v1
