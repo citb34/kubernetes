@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: api-svc
+  name: {{ include "sample.fullname" . }}
   namespace: api
 spec:
   type: LoadBalancer
