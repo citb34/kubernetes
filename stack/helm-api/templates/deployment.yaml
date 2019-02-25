@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-api
+  name: {{ include "sample.fullname" . }}
   namespace: api
 spec:
   replicas: 1
