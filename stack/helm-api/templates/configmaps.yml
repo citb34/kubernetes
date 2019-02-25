@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: db-details
+  name: {{ include "sample.fullname" . }}
   namespace: api
 data:
   dbEndpoint: mariadb-svc.db.svc.cluster.local
